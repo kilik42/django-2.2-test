@@ -10,7 +10,12 @@ from .models import BlogPost
 
 def blog_post_detail_page(request, slug):
     queryset = BlogPost.objects.filter(slug = slug)
-    if
+    if queryset.count() == 0:
+        obj = queryset.first()
+    else:
+        raise Http404
+
+
 
     #obj = get_object_or_404(BlogPost, slug=slug)
     # try:
